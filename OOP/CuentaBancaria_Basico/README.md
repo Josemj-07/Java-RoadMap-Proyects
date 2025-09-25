@@ -24,7 +24,6 @@ public boolean equals(Object obj);
 
 **La verdad aprendí mucho de este miniprograma a pesar de que fuese tan sencillo,  me permitió refrescar un poco la mente con algunos temas de POO y aprender algunas cosas nuevas**
 
->Sic parvis magna - Sr.Francis Drake
 
 ## Posibles mejoras futuras
 - Agregar autenticación con clave de acceso
@@ -33,3 +32,5 @@ public boolean equals(Object obj);
 - Añadirle una interfaz gráfica 
 - Una mejor suite de pruebas para incluir casos más extremos
 - Mejorar las implementaciones de los métodos actuales del API para que sean más realistas
+
+>Sic parvis magna - Sr.Francis Drake
