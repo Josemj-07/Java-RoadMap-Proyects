@@ -23,10 +23,6 @@ public class Curso {
 
     }
 
-    public Curso(int codigoCurso2, Object nombreDelCurso2, int cantidadDeCreditos2, Docente d2) {
-        //TODO Auto-generated constructor stub
-    }
-
     public void agregarEstudiante(Estudiante estudiante) {
        if(estudiante == null) throw new IllegalArgumentException("Ingrese datos válidos");
        estudiantesDelCurso.add(estudiante);
