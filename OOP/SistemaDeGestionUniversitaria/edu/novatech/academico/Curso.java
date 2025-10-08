@@ -2,7 +2,7 @@ package edu.novatech.academico;
 
 import java.util.ArrayList;
 
-import edu.novatech.personas.*;;
+import edu.novatech.personas.*;
 
 public class Curso {
 
@@ -12,17 +12,19 @@ public class Curso {
     private Docente docente;
     ArrayList<Estudiante> estudiantesDelCurso;
 
-    public Curso (int codigoCurso, String nombreDelCurso, byte cantidadDeCreditos, Docente docente) {
+    public Curso (int codigoCurso, String nombreDelCurso, int cantidadDeCreditos) {
        
-        if(codigoCurso < 0 || nombreDelCurso == null || cantidadDeCreditos < 0 || docente == null) throw new IllegalArgumentException("Ingrese datos válidos por favor");
+        if(codigoCurso < 0 || nombreDelCurso == null || cantidadDeCreditos < 0) throw new IllegalArgumentException("Ingrese datos válidos por favor");
         
         this.codigoCurso = codigoCurso;
         this.nombreDelCurso = nombreDelCurso;
-        this.cantidadDeCreditos = cantidadDeCreditos;
-        this.docente = docente;
-
+        this.cantidadDeCreditos = (byte)(cantidadDeCreditos);
         estudiantesDelCurso = new ArrayList<Estudiante>();
 
+    }
+
+    public Curso(int codigoCurso2, Object nombreDelCurso2, int cantidadDeCreditos2, Docente d2) {
+        //TODO Auto-generated constructor stub
     }
 
     public void agregarEstudiante(Estudiante estudiante) {
@@ -83,4 +85,14 @@ public class Curso {
     public String getNombreDelCurso() {
         return nombreDelCurso;
     }
+
+    public int getCodigoCurso() {
+        return codigoCurso;
+    }
+
+    public void setDocente(Docente docente) {
+        if(docente == null) throw new IllegalArgumentException("Ingrese datos válidos");
+        this.docente = docente;
+    }
+
 }

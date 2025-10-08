@@ -1,6 +1,7 @@
 package edu.novatech.personas;
 import java.util.ArrayList;
 import edu.novatech.academico.Curso;
+import java.text.DecimalFormat;
 
 public class Docente extends Persona {
 
@@ -17,7 +18,7 @@ public class Docente extends Persona {
         this.facultad = departamento;
         this.salarioBase = salarioBase;
         this.horasDictadas = horasDictadas;
-        cursosQueDicta = new ArrayList<Curso>
+        cursosQueDicta = new ArrayList<Curso>();
         
     }
 
@@ -31,8 +32,13 @@ public class Docente extends Persona {
 
     }
     
-    public double calcularSalario() {
-        return salarioBase * horasDictadas;
+    public String calcularSalario() {
+
+        DecimalFormat df = new DecimalFormat("$###,###.##");
+        double salarioCalculado = salarioBase * horasDictadas;
+        
+        return df.format(salarioCalculado);
+        
     }
 
     public void inscribirCurso(Curso curso) {

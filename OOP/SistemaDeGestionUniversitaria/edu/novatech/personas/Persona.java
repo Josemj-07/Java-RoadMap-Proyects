@@ -8,12 +8,13 @@ public class Persona {
     protected String email;
 
     //Constructor de la clase Persona
-    public Persona (String nombrePersona, int documentoPersona, String emailPersona) {
+    public Persona (String nombre, int documento, String email) {
 
-        if(nombrePersona == null || emailPersona == null) throw new IllegalArgumentException("Ingrese información válida para los datos de la persona"); 
-        nombre = nombrePersona;
-        documento = documentoPersona;
-        email = emailPersona;
+        if(nombre == null || email == null || documento < 0) throw new IllegalArgumentException("Ingrese información válida para los datos de la persona"); 
+        this.nombre = nombre;
+        this.documento = documento;
+        this.email = email;
+
     }
 
     //métodos sobreescritos de la clase Objetc
@@ -41,16 +42,16 @@ public class Persona {
 
     }
 
-    //Getters y Setters adecuados para los atributos
+    
     public String mostrarInformacion() { 
 
         return "Nombre: " + nombre +"\n" +
         "Documento de identidad: " + documento + "\n" +
         "Correo electrónico: " + email;
 
-
     }
 
+    //Getters y Setters adecuados para los atributos
     public String getNombre() {
         return nombre;
     }
@@ -65,7 +66,7 @@ public class Persona {
 
     public void setEmail(String newEmail) {
         if(newEmail == null) throw new IllegalArgumentException("Ingresa datos válidos por favor");
-        email = newEmail;
+        this.email = newEmail;
     }
 
 }
